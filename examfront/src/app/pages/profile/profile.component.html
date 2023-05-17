@@ -1,0 +1,70 @@
+<mat-card *ngIf="user">
+    <mat-card-content>
+        <h1>Your Profile Details</h1>
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+
+            <div class="container">
+                <div class="container text-center">
+
+                    <img 
+                        src="https://toowoombaautoservices.com.au/wp-content/uploads/2020/01/person-1824144_1280-1080x1080.png" 
+                        alt=""
+                        class="profile-image"
+                    />
+                    <h1 class="mt20" *ngIf="user">{{ user['firstName'] }} {{ user['lastName'] }}</h1>
+                </div>
+                
+
+                <div class="row">
+                    <div class="col-md-10 offset-md-1">
+
+                        <!-- table details -->
+
+                        <table class="table text-center">
+
+                            <tr>
+                                <td>Username</td>
+                                <td>{{ user['username'] }}</td>
+                            </tr>
+
+                            <tr>
+                                <td>Userid</td>
+                                <td>EXAM{{ user['id'] }}</td>
+                            </tr>
+
+                            <tr>
+                                <td>Phone</td>
+                                <td>{{ user['phone'] }}</td>
+                            </tr>
+
+                            <tr>
+                                <td>Role</td>
+                                <td>{{ user['authorities'][0]['authority'] }}</td>
+                            </tr>
+
+                            <tr>
+                                <td>Status</td>
+                                <td>{{ user['enabled'] ? "ACTIVE" : "NOT ACTIVE" }}</td>
+                            </tr>
+
+                        </table>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        
+    </mat-card-content>
+    <div style="height:100px;width:100%;display:flex;justify-content:center;align-items:center;">
+        <mat-card-actions>
+            <button mat-raised-button color="primary">UPDATE</button>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <button mat-raised-button color="accent">SHARE</button>
+        </mat-card-actions>
+    </div>
+    </mat-card-content>
+    
+</mat-card>
